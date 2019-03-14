@@ -7,7 +7,7 @@ using namespace std;
 
 //need to add clean function to remove leading zeroes
 //everything else working fine till now
-//also make division function
+//also make division function and mod funcion
 //add operator overloading
 
 
@@ -147,7 +147,7 @@ vi MUL2(vi A,vi B)
     
 }
 
-class BigNo
+class BigNo //class used to define big nos using vector
 {   public:
     vi v;
     bool IsPos;
@@ -264,14 +264,14 @@ BigNo SUBF(BigNo N,BigNo M)
     
     if(N.IsPos and M.IsPos==false)
     {   
-       BigNo C;
+      	BigNo C;
         C.v=ADD(A,B);
         C.IsPos=true;
         return C;
     }
     else
     {
-       BigNo C;
+       	BigNo C;
         C.v=ADD(A,B);
         C.IsPos=false;
         return C;
@@ -300,15 +300,10 @@ BigNo MULF(BigNo N,BigNo M)
 }
 
 int main() {
-	// your code goes here
-// 	string s; 
-// 	s="2545";vi v1; for(int i=0;i<s.length();i++) v1.pb(s[i]-'0');
-// 	s="234234234";vi v2; for(int i=0;i<s.length();i++) v2.pb(s[i]-'0');
-// 	vi v3=SUB(v2,v1);
-// 	for(int i=0;i<v3.size();i++) cout<<v3[i];
-	
-	BigNo A("2545",true);
-	BigNo B("234234234",false);
+
+	BigNo A("2545000786803324234",true);  	//enter the two nos here, first argument is for the string of the number and the second is to 
+				//handle positive or negative,true for positive and false for negative
+	BigNo B("2342343453453459234",false);   //MULF is for the multiplication,ADDF is for the addition,SUBF(A,B)=A-B is for subtraction
 	BigNo C=MULF(A,B);
 	C.print();
 	cout<<endl;
